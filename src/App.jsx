@@ -803,7 +803,11 @@ export default function StudentManagementApp() {
                                         Số tiền đã đóng:{" "}
                                         {formatCurrency(s.amount)}
                                     </p>
-                                    <div className="flex justify-between mt-2">
+                                    {/* nhóm điểm khảo sát */}
+                                    <div className="flex items-center gap-6">
+                                        <span className="font-bold text-purple-600">
+                                            Điểm thi khảo sát mới nhất:
+                                        </span>
                                         <span className="text-green-600 font-bold">
                                             Toán: {s.math ?? "-"}
                                         </span>
