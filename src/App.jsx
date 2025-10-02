@@ -787,21 +787,21 @@ export default function StudentManagementApp() {
                                 </div>
                             ) : (
                                 <div className="bg-blue-50 p-3 rounded-lg mt-3">
-                                    <p className="text-xs text-gray-600 mb-1">
-                                        Số tiền đã đóng
-                                    </p>
                                     <p className="text-base font-bold text-blue-600">
+                                        Số tiền đã đóng:{" "}
                                         {formatCurrency(s.amount)}
                                     </p>
-                                    <p className="text-base font-bold text-green-600">
-                                        Điểm Toán: {s.math ?? "-"}
-                                    </p>
-                                    <p className="text-base font-bold text-orange-600">
-                                        Điểm Văn: {s.literature ?? "-"}
-                                    </p>
-                                    <p className="text-base font-bold text-purple-600">
-                                        Điểm Anh: {s.english ?? "-"}
-                                    </p>
+                                    <div className="flex justify-between mt-2">
+                                        <span className="text-green-600 font-bold">
+                                            Toán: {s.math ?? "-"}
+                                        </span>
+                                        <span className="text-orange-600 font-bold">
+                                            Văn: {s.literature ?? "-"}
+                                        </span>
+                                        <span className="text-purple-600 font-bold">
+                                            Anh: {s.english ?? "-"}
+                                        </span>
+                                    </div>
                                 </div>
                             )}
                         </div>
