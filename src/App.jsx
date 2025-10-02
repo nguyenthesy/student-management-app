@@ -803,18 +803,17 @@ export default function StudentManagementApp() {
                                         Số tiền đã đóng:{" "}
                                         {formatCurrency(s.amount)}
                                     </p>
-                                    {/* nhóm điểm khảo sát */}
-                                    <div className="flex items-center gap-6">
+                                    <div className="grid grid-cols-[auto_1fr_1fr_1fr] items-center gap-4 mt-2">
                                         <span className="font-bold text-purple-600">
                                             Điểm thi khảo sát mới nhất:
                                         </span>
-                                        <span className="text-green-600 font-bold">
+                                        <span className="text-green-600 font-bold text-center">
                                             Toán: {s.math ?? "-"}
                                         </span>
-                                        <span className="text-orange-600 font-bold">
+                                        <span className="text-orange-600 font-bold text-center">
                                             Văn: {s.literature ?? "-"}
                                         </span>
-                                        <span className="text-purple-600 font-bold">
+                                        <span className="text-purple-600 font-bold text-center">
                                             Anh: {s.english ?? "-"}
                                         </span>
                                     </div>
