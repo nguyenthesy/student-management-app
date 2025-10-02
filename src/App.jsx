@@ -22,6 +22,7 @@ export default function StudentManagementApp() {
     const ADMIN_EMAILS = [
         "nguyenthesyr14111999@gmail.com",
         "haflower78@gmail.com",
+        "theminh",
     ];
 
     const [currentUser, setCurrentUser] = useState(null);
@@ -352,6 +353,17 @@ export default function StudentManagementApp() {
                         >
                             <LogIn className="w-5 h-5" />
                             Đăng nhập
+                        </button>
+                        {/* Nút đăng nhập xem */}
+                        <button
+                            onClick={() => {
+                                setCurrentUser("viewer"); // đặt role là viewer
+                                loadStudents();
+                            }}
+                            className="w-full bg-gray-400 hover:bg-gray-500 text-white px-6 py-3 rounded-lg flex items-center justify-center gap-2"
+                        >
+                            <BookOpen className="w-5 h-5" />
+                            Xem thông tin học sinh
                         </button>
                     </div>
                 </div>
