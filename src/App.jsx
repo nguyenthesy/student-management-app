@@ -32,7 +32,7 @@ export default function StudentManagementApp() {
     const [isAdding, setIsAdding] = useState(false);
     const [editingId, setEditingId] = useState(null);
     const [apiUrl, setApiUrl] = useState(
-        "https://script.google.com/macros/s/AKfycbyWGpaGETsqcDe2j__as-HiwWqAzNs6T4r3pumoq_Qsv7rRGMrGqr7K9NT2OASLIS538g/exec"
+        "https://script.google.com/macros/s/AKfycbzvfYYxUS3bmTRRVjSZym-MKJei_ffBMQzajN7-RcxQ3r_xGQ8F8Q3er1w5bDPir95BRg/exec"
     );
     const [showApiSetup, setShowApiSetup] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
