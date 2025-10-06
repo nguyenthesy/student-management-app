@@ -381,7 +381,6 @@ export default function StudentManagementApp() {
                                 <h1 className="text-base md:text-2xl font-bold text-gray-800 leading-tight">
                                     TẾT TRUNG THU 2025
                                     <br className="md:hidden" /> | THÔN KIM GIAO
-                                    2025
                                 </h1>
                                 <p className="text-xs md:text-sm text-gray-500 truncate">
                                     {isAdmin ? "👑 Admin" : "👤 Viewer"}
