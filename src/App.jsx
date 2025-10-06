@@ -32,7 +32,7 @@ export default function StudentManagementApp() {
     const [isAdding, setIsAdding] = useState(false);
     const [editingId, setEditingId] = useState(null);
     const [apiUrl, setApiUrl] = useState(
-        "https://script.google.com/macros/s/AKfycby0dCvk9Jrm0kIZnaORPjjW_KmnTyL66FMrmy1Y7iuMY120SY8tKZuTdQu5bnvwPsH5Ag/exec"
+        "https://script.google.com/macros/s/AKfycbyfmCq7V6q0KquEvIusLKDJIyj7GqaxDxcbu-swCMVkCq9QnIT7s5itP-vLj8f1C06sFg/exec"
     );
     const [showApiSetup, setShowApiSetup] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
@@ -299,13 +299,10 @@ export default function StudentManagementApp() {
                             <Users className="w-8 h-8 text-white" />
                         </div>
                         <h1 className="text-2xl font-bold text-gray-800 mb-2">
-                            TRƯỜNG THCS MINH TRÍ
+                            TẾT TRUNG THU 2025
                         </h1>
                         <h2 className="text-xl font-semibold text-indigo-600">
-                            LỚP 9A2
-                        </h2>
-                        <h2 className="text-xl font-semibold text-indigo-600">
-                            GVCN: Nguyễn Thị Bích Hà
+                            THÔN KIM GIAO - XÃ TIẾN THẮNG
                         </h2>
                     </div>
 
@@ -363,7 +360,7 @@ export default function StudentManagementApp() {
                             className="w-full bg-gray-400 hover:bg-gray-500 text-white px-6 py-3 rounded-lg flex items-center justify-center gap-2"
                         >
                             <BookOpen className="w-5 h-5" />
-                            Xem thông tin học sinh
+                            Xem thông tin ủng hộ
                         </button>
                     </div>
                 </div>
@@ -382,8 +379,9 @@ export default function StudentManagementApp() {
                             </div>
                             <div>
                                 <h1 className="text-base md:text-2xl font-bold text-gray-800 leading-tight">
-                                    TRƯỜNG THCS MINH TRÍ
-                                    <br className="md:hidden" /> LỚP 9A2
+                                    TẾT TRUNG THU 2025
+                                    <br className="md:hidden" /> | THÔN KIM GIAO
+                                    2025
                                 </h1>
                                 <p className="text-xs md:text-sm text-gray-500 truncate">
                                     {isAdmin ? "👑 Admin" : "👤 Viewer"}
@@ -428,7 +426,7 @@ export default function StudentManagementApp() {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
                         <div className="bg-blue-50 p-3 md:p-4 rounded-lg">
                             <p className="text-xs text-gray-600 mb-1">
-                                Tổng học sinh
+                                Số giao dịch ủng hộ
                             </p>
                             <p className="text-xl md:text-2xl font-bold text-blue-600">
                                 {statistics.totalStudents}
@@ -436,7 +434,7 @@ export default function StudentManagementApp() {
                         </div>
                         <div className="bg-green-50 p-3 md:p-4 rounded-lg">
                             <p className="text-xs text-gray-600 mb-1">
-                                Đã đóng
+                                Trực tiếp
                             </p>
                             <p className="text-xl md:text-2xl font-bold text-green-600">
                                 {statistics.paidStudents}
@@ -444,7 +442,7 @@ export default function StudentManagementApp() {
                         </div>
                         <div className="bg-red-50 p-3 md:p-4 rounded-lg">
                             <p className="text-xs text-gray-600 mb-1">
-                                Chưa đóng
+                                Chuyển khoản{" "}
                             </p>
                             <p className="text-xl md:text-2xl font-bold text-red-600">
                                 {statistics.unpaidStudents}
@@ -481,8 +479,8 @@ export default function StudentManagementApp() {
                                 className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500"
                             >
                                 <option value="all">Tất cả</option>
-                                <option value="paid">Đã đóng</option>
-                                <option value="unpaid">Chưa đóng</option>
+                                <option value="paid">Trực tiếp</option>
+                                <option value="unpaid">Chuyển khoản</option>
                             </select>
                         </div>
                     </div>
@@ -633,18 +631,15 @@ export default function StudentManagementApp() {
                                         {s.paid ? (
                                             <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded flex items-center gap-1">
                                                 <CheckCircle className="w-3 h-3" />
-                                                Đã đóng
+                                                Trực tiếp
                                             </span>
                                         ) : (
-                                            <span className="bg-red-100 text-red-700 text-xs px-2 py-1 rounded flex items-center gap-1">
+                                            <span className="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded flex items-center gap-1">
                                                 <XCircle className="w-3 h-3" />
-                                                Chưa đóng
+                                                Chuyển khoản
                                             </span>
                                         )}
                                     </div>
-                                    <p className="text-sm text-gray-600">
-                                        👤 {s.gender} • 📅 {s.dob}
-                                    </p>
                                 </div>
                                 {isAdmin && (
                                     <div className="flex gap-2">
@@ -670,10 +665,10 @@ export default function StudentManagementApp() {
                                         className={`px-3 py-2.5 rounded-lg font-semibold text-sm transition-colors ${
                                             s.paid
                                                 ? "bg-green-600 text-white"
-                                                : "bg-gray-300"
+                                                : "bg-green-600 text-white"
                                         }`}
                                     >
-                                        {s.paid ? "✓ Đã đóng" : "✗ Chưa đóng"}
+                                        {s.paid ? "✓ Đã thu" : "✗ Đã thu"}
                                     </button>
                                     {/* <input
                                         type="number"
@@ -799,24 +794,10 @@ export default function StudentManagementApp() {
                                 </div>
                             ) : (
                                 <div className="bg-blue-50 p-3 rounded-lg mt-3">
-                                    <p className="text-base font-bold text-blue-600">
-                                        Số tiền đã đóng:{" "}
+                                    <p className="text-base font-bold text-emerald-600">
+                                        Số tiền đã ủng hộ:{" "}
                                         {formatCurrency(s.amount)}
                                     </p>
-                                    <div className="grid grid-cols-[auto_1fr_1fr_1fr] items-center gap-4 mt-2">
-                                        <span className="font-bold text-purple-600">
-                                            Điểm thi khảo sát mới nhất:
-                                        </span>
-                                        <span className="text-green-600 font-bold text-center">
-                                            Toán: {s.math ?? "-"}
-                                        </span>
-                                        <span className="text-orange-600 font-bold text-center">
-                                            Văn: {s.literature ?? "-"}
-                                        </span>
-                                        <span className="text-purple-600 font-bold text-center">
-                                            Anh: {s.english ?? "-"}
-                                        </span>
-                                    </div>
                                 </div>
                             )}
                         </div>
